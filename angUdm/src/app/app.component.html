@@ -1,0 +1,49 @@
+<h1 class='center'>Pokémons</h1>
+<div class='container'>
+  <div class="row">
+    <div *ngFor='let pokemon of pokemons' class="col   m4">
+      <div class="card horizontal" (click)="selectPokemon(pokemon)" appBorderCardDirective>
+        <div class="card-image">
+          <img [src]="pokemon.picture">
+        </div>
+
+        <div class="card-stacked">
+          <div class="card-content">
+            <p>{{ pokemon.name }}</p>
+            <p><small>{{ pokemon.created }}</small></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+  <!--
+  <h1>{{ title }}</h1>
+<ul>
+  <li *ngFor="let pokemon of pokemons">{{ pokemon.name}}</li>
+</ul>
+  <p *ngIf="age<20">Ceci est un message pour les personnes majeurs</p>
+  <input type="text" #box (keyup.enter)="values= box.value" (blur)="values=box.value">
+  <p>{{ values }}</p>
+  <ul>
+  <li>Bonjour !</li>
+  <li>Bonsoir !</li>
+  <li>Bonne après midi !</li>
+  <button (click)="onClick()">Cliquer ici !</button>
+  <input type="text" (keyup)="onKey($event)">
+  <input #box type="text" (keyup)="0">
+  <input type="text" #box (keyup)="onKey(box.value)">
+  <p>{{ box.value }}</p>
+  <p>{{ value }}</p>
+  </ul>
+  -->
+
+
