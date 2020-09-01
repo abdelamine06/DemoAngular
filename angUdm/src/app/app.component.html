@@ -4,13 +4,16 @@
     <div *ngFor='let pokemon of pokemons' class="col   m4">
       <div class="card horizontal" (click)="selectPokemon(pokemon)" appBorderCardDirective>
         <div class="card-image">
-          <img [src]="pokemon.picture">
+          <img [src]="pokemon.picture" alt="">
         </div>
 
         <div class="card-stacked">
           <div class="card-content">
             <p>{{ pokemon.name }}</p>
-            <p><small>{{ pokemon.created }}</small></p>
+            <p><small>{{ pokemon.created | date:"dd/MM/yyyy"}}</small></p>
+            <span *ngFor="let type of pokemon.types"
+                  class="{{ type | pokemonTypeColor}}"
+            >{{ type }}</span>
           </div>
         </div>
       </div>

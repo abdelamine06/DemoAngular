@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BorderCardDirectiveDirective } from './border-card-directive.directive';
+import { PokemonTypeColorPipe} from './services/pokemon-type-color-pipePerso.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BorderCardDirectiveDirective
+    BorderCardDirectiveDirective,
+    PokemonTypeColorPipe
   ],
   imports: [
     BrowserModule,
