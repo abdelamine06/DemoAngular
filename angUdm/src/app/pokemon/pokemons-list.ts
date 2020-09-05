@@ -1,4 +1,4 @@
-import { Pokemon} from '../models/pokemon.model';
+import { Pokemon} from './models/pokemon.model';
 
 export const POKEMONS: Pokemon[] = [
   {
@@ -99,6 +99,7 @@ export const POKEMONS: Pokemon[] = [
     picture: "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/035.png",
     types: ["Fée"],
     created: new Date()
+
   },
   {
     id: 12,

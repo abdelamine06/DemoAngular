@@ -1,9 +1,10 @@
 import {Injectable} from '@angular/core';
-import {Pokemon} from './models/pokemon.model';
-import { POKEMONS } from './services/pokemons.service';
+import {Pokemon} from '../models/pokemon.model';
+import { POKEMONS } from '../pokemons-list';
 
 @Injectable()
 export class PokemonService {
+
   constructor() {
   }
 
