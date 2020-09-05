@@ -18,10 +18,12 @@ export class DetailPokemonComponent implements OnInit {
 
   ngOnInit(): void {
     this.pokemons = POKEMONS;
-    const id = +this.route.snapshot.params[' id '];
+    const id = +this.route.snapshot.params['id'];
     for ( let i = 0; i < this.pokemons.length; i++){
-      if ( this.pokemons[i].id === id){
-        this.pokemon = this.pokemons[id];
+      if ( this.pokemons[i].id == id){
+        this.pokemon = this.pokemons[i];
+        console.log("le id est " + id);
+        console.log(" le i est " + i)
       }
     }
   }

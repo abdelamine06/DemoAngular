@@ -10,24 +10,19 @@ import  { Router} from '@angular/router';
 })
 export class ListPokemonComponent implements OnInit {
   public pokemons: Pokemon[] = null;
-  public title: string = "La liste des pokemons!";
-  constructor(private router: Router) {
 
+
+  constructor(private router: Router) {
   }
   ngOnInit() {
     this.pokemons = POKEMONS;
   }
   selectPokemon(pokemon: Pokemon) {
+    console.log('Vous avez selectionné ' + pokemon.name);
     let link = ['/pokemon', pokemon.id];
     this.router.navigate(link);
   }
 
-  /* onClick() {
-     console.log("Le button est cliquer!");
-   }
 
-   onKey(value:string) {
-     this.value = 'Bonjour ' + value;
-   }*/
 
 }
