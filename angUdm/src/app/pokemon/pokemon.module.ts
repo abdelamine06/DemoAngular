@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { PokemonRoutingModule} from './pokemon-routing.module';
 
 import { BorderCardDirectiveDirective } from './border-card-directive.directive';
-import { PokemonTypeColorPipe} from './services/pokemon-type-color-pipePerso.service';
+import { PokemonTypeColorPipe} from './pokemon-type-color-pipePerso.service';
 import { DetailPokemonComponent } from './detail-pokemon/detail-pokemon.component';
 import { ListPokemonComponent } from './list-pokemon/list-pokemon.component';
 

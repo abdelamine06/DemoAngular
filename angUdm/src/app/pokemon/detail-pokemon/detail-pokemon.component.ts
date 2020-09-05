@@ -22,8 +22,7 @@ export class DetailPokemonComponent implements OnInit {
     for ( let i = 0; i < this.pokemons.length; i++){
       if ( this.pokemons[i].id == id){
         this.pokemon = this.pokemons[i];
-        console.log("le id est " + id);
-        console.log(" le i est " + i)
+
       }
     }
   }
