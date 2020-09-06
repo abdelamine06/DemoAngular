@@ -19,6 +19,10 @@ export class PokemonService {
       if(pokemons[index].id == id){
         return pokemons[index];
       }
+
     }
+  }
+  getPokemonTypes(): string[] {
+  return ['Feu', 'Plante', 'Poison', 'Eau', 'Normal', 'Vol', 'Electrik', 'Fée'];
   }
 }
