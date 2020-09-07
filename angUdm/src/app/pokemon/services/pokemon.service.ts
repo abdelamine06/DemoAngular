@@ -46,5 +46,15 @@ export class PokemonService {
     return ['Feu', 'Plante', 'Poison', 'Eau', 'Normal', 'Vol', 'Electrik', 'Fée'];
   }
 
+  updatePokemon(pokemon: Pokemon): Observable<Pokemon> {
+    const httpOptions = {
+      headers: new HttpHeaders({'Content-Type': 'application/json'})
+    };
+    return this.http.put(this.pokemonUrl, pokemon, httpOptions).pipe(
+      tap(() => {
+        console.log(`updated pokemon id=${pokemon.id}`);
+      }), catchError(this.handleError<any>('updatePokemon'))
+    );
+  }
 
 }
