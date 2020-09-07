@@ -4,7 +4,6 @@ import { POKEMONS} from '../pokemons-list';
 
 export class InMemoryDataService implements  InMemoryDbService{
   createDb(){
-    let pokemons = POKEMONS;
     return { POKEMONS };
   }
 }

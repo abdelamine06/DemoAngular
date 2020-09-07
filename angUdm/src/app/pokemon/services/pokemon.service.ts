@@ -1,28 +1,50 @@
 import {Injectable} from '@angular/core';
 import {Pokemon} from '../models/pokemon.model';
-import { POKEMONS } from '../pokemons-list';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {Observable} from 'rxjs';
+import {catchError, map, tap} from 'rxjs/operators';
+import {of} from 'rxjs';
 
 @Injectable()
 export class PokemonService {
 
-  constructor() {
+  constructor(private http: HttpClient) {
   }
 
-  getPokemons(): Pokemon[]{
-    return POKEMONS
+  public pokemonUrl = 'api/POKEMONS';
+
+  private handleError<T>(operation = 'operation', result?: T) {
+    return (error: any): Observable<T> => {
+      console.log('error');
+      console.log(`${operation} failed: ${error.message}`);
+
+
+      return of(result as T);
+    };
   }
 
-  getPokemon(id: number): Pokemon {
-    let pokemons = this.getPokemons();
-
-    for(let index = 0; index<pokemons.length; index++){
-      if(pokemons[index].id == id){
-        return pokemons[index];
-      }
-
-    }
+  getPokemons(): Observable<Pokemon[]> {
+    return this.http.get<Pokemon[]>(this.pokemonUrl).pipe(
+      tap(_ => {
+        console.log('Pokemon fetched!');
+      }),
+      catchError(this.handleError('getPokemons', []))
+    );
   }
+
+  getPokemon(id: number): Observable<Pokemon> {
+    const url = `${this.pokemonUrl}/${id}`;
+    return this.http.get<Pokemon>(url).pipe(
+      tap(() => {
+        console.log(`fetched pokemond id = ${id}`);
+      }),
+      catchError(this.handleError<Pokemon>(`getPokemon id=${id}`))
+    );
+  }
+
   getPokemonTypes(): string[] {
-  return ['Feu', 'Plante', 'Poison', 'Eau', 'Normal', 'Vol', 'Electrik', 'Fée'];
+    return ['Feu', 'Plante', 'Poison', 'Eau', 'Normal', 'Vol', 'Electrik', 'Fée'];
   }
+
+
 }
