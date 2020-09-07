@@ -6,13 +6,15 @@ import { HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
 import { InMemoryDataService} from './services/in-memory-data.service';
 
 import { PokemonRoutingModule} from './pokemon-routing.module';
+import { PokemonService} from './services/pokemon.service';
 
 import { BorderCardDirectiveDirective } from './border-card-directive.directive';
 import { PokemonTypeColorPipe} from './pokemon-type-color-pipePerso.service';
+
 import { DetailPokemonComponent } from './detail-pokemon/detail-pokemon.component';
 import { ListPokemonComponent } from './list-pokemon/list-pokemon.component';
 import { PokemonFormComponent } from './pokemon-form/pokemon-form.component';
-import { PokemonService} from './services/pokemon.service';
+import { SearchPokemonComponent} from './search-pokemon/search-pokemon.component';
 import { EditPokemonComponent } from './edit-pokemon/edit-pokemon.component';
 import { FormsModule} from '@angular/forms';
 
@@ -24,7 +26,8 @@ import { FormsModule} from '@angular/forms';
     DetailPokemonComponent,
     ListPokemonComponent,
     PokemonFormComponent,
-    EditPokemonComponent
+    EditPokemonComponent,
+    SearchPokemonComponent
   ],
   imports: [
     CommonModule,
