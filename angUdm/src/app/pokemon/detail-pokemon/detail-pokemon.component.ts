@@ -17,7 +17,6 @@ export class DetailPokemonComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
     const id = +this.route.snapshot.params['id'];
     this.pokemonService.getPokemon(id)
       .subscribe((pokemon)=>{
@@ -25,7 +24,12 @@ export class DetailPokemonComponent implements OnInit {
     });
 
   }
-
+  delete(pokemon: Pokemon): void{
+    this.pokemonService.deletePokemon(pokemon)
+      .subscribe(()=>{
+        this.goBack();
+      })
+  }
   goBack(): void {
     this.router.navigate(['/pokemons'])
   }
