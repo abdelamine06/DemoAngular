@@ -1,5 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+
+import { HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
+import { InMemoryDataService} from './services/in-memory-data.service';
+
 import { PokemonRoutingModule} from './pokemon-routing.module';
 
 import { BorderCardDirectiveDirective } from './border-card-directive.directive';
@@ -24,6 +29,8 @@ import { FormsModule} from '@angular/forms';
   imports: [
     CommonModule,
     FormsModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService,{dataEncapsulation:false}),
     PokemonRoutingModule
 
   ],
