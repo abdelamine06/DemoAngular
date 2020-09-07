@@ -1,6 +1,7 @@
 <h1 class='center'>Pokémons</h1>
 <div class='container'>
   <div class="row">
+    <app-search-pokemon></app-search-pokemon>
     <div *ngFor='let pokemon of pokemons' class="col   m4">
       <div class="card horizontal" (click)="selectPokemon(pokemon)" appBorderCardDirective>
         <div class="card-image">
