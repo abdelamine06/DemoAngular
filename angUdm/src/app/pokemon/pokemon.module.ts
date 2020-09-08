@@ -7,6 +7,7 @@ import { InMemoryDataService} from './services/in-memory-data.service';
 
 import { PokemonRoutingModule} from './pokemon-routing.module';
 import { PokemonService} from './services/pokemon.service';
+import { AuthGuardService} from './services/auth-guard.service';
 
 import { BorderCardDirectiveDirective } from './border-card-directive.directive';
 import { PokemonTypeColorPipe} from './pokemon-type-color-pipePerso.service';
@@ -41,7 +42,8 @@ import { FormsModule} from '@angular/forms';
 
   ],
   providers: [
-    PokemonService
+    PokemonService,
+    AuthGuardService
   ]
 })
 export class PokemonModule { }
