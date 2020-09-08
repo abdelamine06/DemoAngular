@@ -16,6 +16,8 @@ import { ListPokemonComponent } from './list-pokemon/list-pokemon.component';
 import { PokemonFormComponent } from './pokemon-form/pokemon-form.component';
 import { SearchPokemonComponent} from './search-pokemon/search-pokemon.component';
 import { EditPokemonComponent } from './edit-pokemon/edit-pokemon.component';
+import { LoadIconComponent} from './load-icon/load-icon.component';
+
 import { FormsModule} from '@angular/forms';
 
 
@@ -27,7 +29,8 @@ import { FormsModule} from '@angular/forms';
     ListPokemonComponent,
     PokemonFormComponent,
     EditPokemonComponent,
-    SearchPokemonComponent
+    SearchPokemonComponent,
+    LoadIconComponent
   ],
   imports: [
     CommonModule,
