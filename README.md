@@ -1,1 +1,4 @@
-# Petite application pour mettre en pratique les notions de base d'Angular9
+# Demo Angular9
+URL: https://angudm-ebcb9.web.app
+Name: admin
+Pwd : admin
